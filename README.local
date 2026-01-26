@@ -1,0 +1,6 @@
+# Run the beast locally
+
+This is a working local command line invocation of that tool. Feel free to tweak it to match your needs.
+```
+python3 -m upgrade_testing.command_line -c ../auto-upgrade-testing-specifications/profiles/ubuntu-noble-resolute-basic-amd64_qemu.yaml --provision --adt-args=--timeout-factor=10 -d --results-dir /tmp/upgrade_tests
+```
