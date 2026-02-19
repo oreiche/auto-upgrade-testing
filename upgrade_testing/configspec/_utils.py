@@ -16,10 +16,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import pkg_resources
+import importlib.resources as importlib_resources
 
 
 def get_file_data_location():
     import upgrade_testing
 
-    return pkg_resources.resource_filename(upgrade_testing.__name__, "data")
+    ref = importlib_resources.files(upgrade_testing.__name__) / "data"
+    with importlib_resources.as_file(ref) as path:
+        return str(path)
